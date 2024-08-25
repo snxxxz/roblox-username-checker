@@ -65,7 +65,6 @@ def generate_and_check_username():
             
             # Wait until the generated name appears
             generated_name = wait.until(EC.visibility_of_element_located((By.ID, 'name'))).text
-            print(f"{Fore.BLUE}Generated name: {generated_name}{Style.RESET_ALL}")
 
             # Validate the username on Roblox
             if validate_username(generated_name):
