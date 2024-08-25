@@ -21,7 +21,7 @@ Example Commands
    python main.py then pick option 1
 
 2. Check Multiple Usernames
-   python main.py then you pick option 2 or 3 / if 2 put your usernames to check in the usernames.txt file
+   python main.py then you pick option 2 or 3 / if 2 put your usernames to check in the names.txt file
 
 Contact
 - For questions or issues, open an issue on the GitHub repository or contact me on discord @wqgd
