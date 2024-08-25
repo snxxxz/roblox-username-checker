@@ -1,27 +1,25 @@
-Roblox Username Checker - Options
+Username Validator
 
-1. Username Availability Check
-   - Description: Verify if a Roblox username is available or already taken.
-   - Usage: python main.py
+A Python script for checking the availability of usernames across various platforms including Roblox and TikTok. It also supports username generation via a local HTML file and batch validation from a file.
 
-2. Batch Processing
-   - Description: Check multiple usernames at once (if supported).
-   - Usage: python main.py
+Features
 
-3. Graphical User Interface (GUI)
-   - Description: Provides a graphical interface to check usernames.
-   - Instructions: Enter the usernames in the provided fields.
+- Roblox Username Validation: Checks if a Roblox username is available or valid.
+- TikTok Username Validation: Checks if a TikTok username is available.
+- Username Generation: Generates usernames using a local HTML file and validates them.
+- Batch Username Validation: Validates usernames from a list in a file.
+- Clipboard Support: Copies valid usernames to the clipboard.
 
-Configuration
-- If applicable, configure settings in a configuration file (config.json, .env, etc.) or through environment variables.
+ Prerequisites
 
-Example Commands
+- Python: Python 3.x should be installed.
+- Required Libraries: Install the following Python libraries:
+  - requests
+  - pyperclip
+  - colorama
+  - selenium
 
-1. Check a Single Username
-   python main.py then pick option 1
+  Install these libraries using pip:
 
-2. Check Multiple Usernames
-   python main.py then you pick option 2 or 3 / if 2 put your usernames to check in the names.txt file
-
-Contact
-- For questions or issues, open an issue on the GitHub repository or contact me on discord @wqgd
+  bash
+  pip install requests pyperclip colorama selenium
