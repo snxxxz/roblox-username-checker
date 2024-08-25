@@ -18,6 +18,11 @@ def validate_username(username):
             print(f"{Fore.GREEN}The username '{username}' is valid and available{Style.RESET_ALL}")
             with open('valid.txt', 'a') as file:
                 file.write(username + '\n')
+            # Ask user if they want to copy the username to clipboard
+            copy_choice = input(f"{Fore.GREEN}[{Fore.RESET}+{Fore.GREEN}]{Fore.RESET} Do you want to copy the username to clipboard? (y/n): ").strip().lower()
+            if copy_choice == 'y':
+                pyperclip.copy(username)
+                print(f"{Fore.GREEN}The username '{username}' has been copied to the clipboard.{Style.RESET_ALL}")
             return True
         elif data['code'] == 1:
             print(f"{Fore.RED}The username '{username}' is already in use{Style.RESET_ALL}")
@@ -64,15 +69,7 @@ def generate_and_check_username():
 
             # Validate the username on Roblox
             if validate_username(generated_name):
-                # Ask user if they want to copy the name
-                copy_choice = input(f"{Fore.GREEN}[{Fore.RESET}+{Fore.GREEN}]{Fore.RESET} Do you want to copy the username to clipboard? (yes/no): ").strip().lower()
-                if copy_choice == 'yes':
-                    pyperclip.copy(generated_name)
-                    print(f"{Fore.GREEN}The username '{generated_name}' has been copied to the clipboard.{Style.RESET_ALL}")
                 break  # Exit the loop if a valid username is found
-            
-            # Sleep or wait for a short period if necessary
-            # time.sleep(2)  # Optional: Add a delay if you want to throttle the generation
 
     except Exception as e:
         print(f"An error occurred: {e}")
@@ -103,8 +100,8 @@ while True:
     if choice == '1':
         while True:
             username = input(f"{Fore.GREEN}[{Fore.RESET}+{Fore.GREEN}]{Fore.RESET} Enter a username: ")
-            validate_username(username)
-            # The loop runs indefinitely; no prompt to continue
+            if validate_username(username):
+                break  # Stop if a valid username is found
     elif choice == '2':
         filename = input(f"{Fore.GREEN}[{Fore.RESET}+{Fore.GREEN}]{Fore.RESET} Enter the filename of the usernames file (must include .txt): ")
         validate_usernames_from_file(filename)
