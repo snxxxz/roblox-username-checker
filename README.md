@@ -10,7 +10,6 @@ Roblox Username Checker - Options
 
 3. Graphical User Interface (GUI)
    - Description: Provides a graphical interface to check usernames.
-   - Usage: python gui.py
    - Instructions: Enter the usernames in the provided fields.
 
 Configuration
